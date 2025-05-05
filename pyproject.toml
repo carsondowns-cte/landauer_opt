@@ -5,7 +5,7 @@ requires-python = ">=3.8"
 dependencies = ["qiskit>=1.2", "networkx>=3.2"]
 
 [project.optional-dependencies]
-dev = ["pytest", "black", "ruff"]
+dev = ["pytest", "black", "ruff~=0.11"]
 docs = [
   "mkdocs-material[charts]>=9.5",
   "mkdocstrings[python]>=0.24",
