@@ -1,7 +1,0 @@
-qiskit>=1.2
-networkx>=3.2
-
-[dev]
-pytest
-black
-ruff

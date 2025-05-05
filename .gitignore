@@ -2,3 +2,9 @@
 # ignore local envs
 .venv*
 landauer_opt/l_opt/
+*.egg-info/
+
+# ─── generated artefacts ───
+*.egg-info/
+__pycache__/
+

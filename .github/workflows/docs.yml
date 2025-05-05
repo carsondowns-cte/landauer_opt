@@ -1,0 +1,39 @@
+name: Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'landauer_opt/**'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - name: Install doc deps
+        run: |
+          pip install -e '.[docs]'
+      - name: Build docs
+        run: mkdocs build --strict
+
+  deploy:
+    needs: build-docs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install doc deps
+        run: pip install -e '.[docs]'
+      - name: Deploy to gh-pages
+        run: mkdocs gh-deploy --clean --force

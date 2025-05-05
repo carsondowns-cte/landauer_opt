@@ -1,0 +1,22 @@
+site_name: Landauer-Opt
+repo_url: https://github.com/carsondowns-cte/landauer_opt
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+
+nav:
+  - Home: index.md
+  - Quick-start: guide/quickstart.md
+  - API Reference: api/landauer_opt.md
