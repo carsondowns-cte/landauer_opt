@@ -36,8 +36,8 @@ Requirement already satisfied: pluggy<2,>=1.5 in ./.venv_test/lib/python3.12/sit
 Building wheels for collected packages: landauer_opt
   Building editable for landauer_opt (pyproject.toml): started
   Building editable for landauer_opt (pyproject.toml): finished with status 'done'
-  Created wheel for landauer_opt: filename=landauer_opt-0.1.0-0.editable-py3-none-any.whl size=2805 sha256=0841c5ffa980a055bb9e95f70aa83d1a0c2d902ed92a8a705d790d5ca4506298
-  Stored in directory: /private/var/folders/fz/z_t4_bhs27x3sq4_x75_047c0000gn/T/pip-ephem-wheel-cache-vl0afxf6/wheels/4d/1b/60/5349fb58977132fe509cea2780977367ab5da825f967844526
+  Created wheel for landauer_opt: filename=landauer_opt-0.1.0-0.editable-py3-none-any.whl size=2805 sha256=7dd81c9af48bd0e90468ecd2d590afc36cab70dce432b60a530616b786c62d29
+  Stored in directory: /private/var/folders/fz/z_t4_bhs27x3sq4_x75_047c0000gn/T/pip-ephem-wheel-cache-5aodzns7/wheels/4d/1b/60/5349fb58977132fe509cea2780977367ab5da825f967844526
 Successfully built landauer_opt
 Installing collected packages: landauer_opt
   Attempting uninstall: landauer_opt
@@ -49,3 +49,6 @@ using package path: landauer_opt
 === 2. Ruff lint ===
 All checks passed!
 === 3. Black style ===
+=== 4. Pytest unit ===
+..                                                                       [100%]
+2 passed in 0.41s

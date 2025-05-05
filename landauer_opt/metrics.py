@@ -31,7 +31,7 @@ def landauer_cost(
 
     Notes
     -----
-    *Landauer 1961* : ΔQ ≥ k\_B T ln 2 per erased bit.
+    *Landauer 1961* : ΔQ ≥ k_B T ln 2 per erased bit.
 
     """
     if bits < 0:
