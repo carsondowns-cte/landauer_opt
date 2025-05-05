@@ -35,7 +35,7 @@ Returned dictionary keys
 
 from __future__ import annotations
 
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple
 
 from qiskit import QuantumCircuit, ClassicalRegister
 from qiskit.quantum_info import Statevector, state_fidelity
@@ -54,8 +54,15 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 
-def _insert_measure_reset(circ: QuantumCircuit, qubits: List[int]) -> QuantumCircuit:
-    """Return *new* circuit with measure+reset applied to ``qubits`` (in-place safe)."""
+def _insert_measure_reset(circ: QuantumCircuit, qubits: list[int]) -> QuantumCircuit:
+    """
+    Return *new* circuit with measure+reset on ``qubits``.
+    If ``qubits`` is empty simply return a copy.
+    """
+    # ⬛ Nothing to do ────────────────────────────────────────────────────────
+    if not qubits:
+        return circ.copy()
+
     out = circ.copy()
     need = max(qubits) + 1
     if out.num_clbits < need:
